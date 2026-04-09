@@ -57,6 +57,4 @@
 | Forge-2 / Anvil-02 | 181% | 211% | ⚠️ Critical Overload |
 | Apex-3 / Whitehall-04 | 22% | 30% | 🟢 Underutilized |
 
----
 
-## 📁 Project Structure
