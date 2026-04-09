@@ -1,6 +1,7 @@
 # Nexus Datacom | Power Monitoring Dashboards
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+[![SQLite](https://img.shields.io/badge/SQLite-3.x-blue.svg)](https://sqlite.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-1.3+-red.svg)](https://pandas.pydata.org/)
 [![Plotly](https://img.shields.io/badge/Plotly-5.10+-green.svg)](https://plotly.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -13,18 +14,18 @@
 
 | Dashboard | Description |
 |-----------|-------------|
-| [⚡ Power Consumption](https://nevskoii.github.io/personal_projects/heatmap_with_dc_aggregated.html) | Actual vs. projected capacity with color-coded load indicators |
-| [💰 Sales Risk Heatmap](https://nevskoii.github.io/personal_projects/sales_risk_heatmap.html) | Commercial sales analysis with risk levels (120% industry norm) |
+| [⚡ Power Consumption](https://nevskoii.github.io/personal_projects/heatmap_consumption.html) | Actual vs. projected capacity with color-coded load indicators |
+| [💰 Sales Risk Heatmap](https://nevskoii.github.io/personal_projects/heatmap_sales.html) | Commercial sales analysis with risk levels (120% industry norm) |
 
 ---
 
 ## 🎯 Business Problem
 
-**Challenge:** Manual Excel analysis of 150+ server halls across 25 data centers was time-consuming (4+ hours weekly) and error-prone.
+**Challenge:** Manual Excel analysis of 113 server halls across 27 data centers was time-consuming and error-prone.
 
-**Solution:** Interactive treemap dashboards that identify overloaded (red) and underutilized (green) segments in **30 seconds**.
+**Solution:** SQL-powered interactive treemap dashboards that identify overloaded (red) and underutilized (green) segments in **30 seconds**.
 
-**Key Insight:** Forge-2 location shows critical overload (200%+ sales), while new Apex-3/4 facilities need aggressive client acquisition (30% utilization).
+**Key Insight:** Forge-2 location shows critical overload (200%+ sales), while new Apex-3/4 facilities need aggressive client acquisition (25-35% utilization).
 
 ---
 
@@ -32,6 +33,7 @@
 
 | Category | Technologies |
 |----------|--------------|
+| **Database** | SQLite |
 | **Data Processing** | Python, Pandas, NumPy |
 | **Visualization** | Plotly (Treemap, Interactive Charts) |
 | **Hosting** | GitHub Pages |
@@ -39,22 +41,80 @@
 
 ---
 
+## 📁 Project Structure
+personal_projects/
+├── index.html # Portal page
+├── heatmap_consumption.html # Power consumption dashboard
+├── heatmap_sales.html # Sales risk dashboard
+├── generate_dashboards.py # Python script (SQL + Plotly)
+├── data/
+│ ├── nexus_datacom.db # SQLite database
+│ └── README.md # Database schema docs
+└── README.md # This file
+
+text
+
+---
+
 ## 📈 Key Metrics
 
 | Metric | Value |
 |--------|-------|
-| Data Centers | 25 |
-| Server Halls | 150+ |
-| Total Projected Capacity | 48.1 MW |
-| Average Utilization | 56% |
-| Average Sell-through | 95% |
+| Data Centers | 27 |
+| Server Halls | 113 |
+| Total Projected Capacity | 130 MW |
+| Average Utilization | 60% |
+| Average Sell-through | 108% |
 
 ### 🔴 Critical Insights
 
 | Location | Load | Sales | Status |
 |----------|------|-------|--------|
-| Forge-2 / Anvil-03 | 221% | 243% | ⚠️ Critical Overload |
-| Forge-2 / Anvil-02 | 181% | 211% | ⚠️ Critical Overload |
-| Apex-3 / Whitehall-04 | 22% | 30% | 🟢 Underutilized |
+| Forge-2 / Hall-02 | 181% | 211% | ⚠️ Critical Overload |
+| Forge-2 / Hall-03 | 221% | 243% | ⚠️ Critical Overload |
+| Forge-2 / Hall-05 | 185% | 215% | ⚠️ Critical Overload |
+| Apex-3 / Hall-01 | 22% | 30% | 🟢 Underutilized |
+| Apex-4 / Hall-02 | 21% | 27% | 🟢 Underutilized |
+
+---
+
+## 🚀 How to Run Locally
+
+### 1. Clone repository
+```bash
+git clone https://github.com/nevskoii/personal_projects.git
+cd personal_projects
+2. Install dependencies
+bash
+pip install pandas plotly numpy
+3. Generate database and dashboards
+bash
+python generate_dashboards.py
+4. Open in browser
+heatmap_consumption.html
+
+heatmap_sales.html
+
+🎨 Color Schemes
+Power Consumption
+Color	Load %	Status
+🟢 Green	0-60%	Normal
+🟡 Yellow	60-80%	Attention
+🟠 Orange	80-100%	High Load
+🔴 Red	100%+	Overload
+Sales Risk
+Color	Sell-through	Risk Level
+🟢 Light Green	<100%	Low Risk
+🟢 Dark Green	100-120%	Optimal ✓
+🟡 Yellow	120-140%	Warning ⚠
+🟠 Orange	140-160%	High Risk ⚠️
+🔴 Red	160%+	Critical ⚠️
+📬 Contact
+Alexander Korshunov
+📧 alexandreee@gmail.com
+💻 GitHub
+
+📄 License
+MIT License — free for personal and portfolio use.
 
 
