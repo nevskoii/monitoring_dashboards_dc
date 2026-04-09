@@ -64,10 +64,7 @@
 ---
 ## 📬 Contact
 
-**Alexander Korshunov**  
-📧 [alexandreee@gmail.com](mailto:alexandreee@gmail.com)  
 💼 [LinkedIn](https://linkedin.com/in/askorshunov)  
-💻 [GitHub](https://github.com/nevskoii)  
-📱 Telegram: [@o0o00o0o0](https://t.me/o0o00o0o0)
+💻 [GitHub](https://github.com/nevskoii)
 
 
