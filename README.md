@@ -1,6 +1,6 @@
 # Data Centre Power & Sales Monitoring
 
-**Completed interactive analytics project** — Python, Pandas, SQLite and Plotly.
+**Interactive analytics project** — Python, Pandas, SQLite and Plotly.
 
 **[View the live project](https://nevskoii.github.io/monitoring_dashboards_dc/)** · [Power Consumption Treemap](https://nevskoii.github.io/monitoring_dashboards_dc/heatmap_consumption.html) · [Sales Risk Treemap](https://nevskoii.github.io/monitoring_dashboards_dc/heatmap_sales.html)
 
