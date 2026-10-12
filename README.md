@@ -1,70 +1,65 @@
-# Data Center Operator | Power & Sales Monitoring Dashboards
+# Data Centre Power & Sales Monitoring
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
-[![SQLite](https://img.shields.io/badge/SQLite-3.x-blue.svg)](https://sqlite.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-1.3+-red.svg)](https://pandas.pydata.org/)
-[![Plotly](https://img.shields.io/badge/Plotly-5.10+-green.svg)](https://plotly.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://nevskoii.github.io/personal_projects/)
+**Completed interactive analytics project** — Python, Pandas, SQLite and Plotly.
 
-## 📊 Live Demo
+**[View the live project](https://nevskoii.github.io/monitoring_dashboards_dc/)** · [Power Consumption Treemap](https://nevskoii.github.io/monitoring_dashboards_dc/heatmap_consumption.html) · [Sales Risk Treemap](https://nevskoii.github.io/monitoring_dashboards_dc/heatmap_sales.html)
 
-> **Interactive dashboards are live at:**  
-> 🔗 [https://nevskoii.github.io/monitoring_dashboards_dc/](https://nevskoii.github.io/monitoring_dashboards_dc/)
+## Business objective
 
-| Dashboard | Description |
-|-----------|-------------|
-| [⚡ Power Consumption](https://nevskoii.github.io/monitoring_dashboards_dc/heatmap_consumption.html) | Actual vs. projected capacity with color-coded load indicators |
-| [💰 Sales Risk Heatmap](https://nevskoii.github.io/monitoring_dashboards_dc/heatmap_sales.html) | Commercial sales analysis with risk levels (120% industry norm) |
+Monitor data centre power consumption and commercial sales commitments at the server-hall level. Present operational and commercial capacity indicators in a consistent hierarchy so that overloaded and underutilised locations can be identified without manually reviewing each hall.
 
----
-
-## 🎯 Business Problem
-
-**Challenge:** Manual Excel analysis of 113 server halls across 27 data centers was time-consuming and error-prone.
-
-**Solution:** SQL-powered interactive treemap dashboards that identify overloaded (red) and underutilized (green) segments in **30 seconds**.
-
-**Key Insight:** Forge-2 location shows critical overload (200%+ sales), while new Apex-3/4 facilities need aggressive client acquisition (25-35% utilization).
-
----
-
-## 🛠 Tech Stack
-
-| Category | Technologies |
-|----------|--------------|
-| **Database** | SQLite |
-| **Data Processing** | Python, Pandas, NumPy |
-| **Visualization** | Plotly (Treemap, Interactive Charts) |
-| **Hosting** | GitHub Pages |
-| **Version Control** | Git, GitHub |
-
---- 
-
-## 📈 Key Metrics
+## Scope
 
 | Metric | Value |
-|--------|-------|
-| Data Centers | 27 |
-| Server Halls | 113 |
-| Total Projected Capacity | 130 MW |
-| Average Utilization | 60% |
-| Average Sell-through | 108% |
+|---|---:|
+| Data centres | 27 |
+| Server halls | 113 |
+| Projected capacity | 130 MW |
+| Actual consumption | 78 MW |
+| Average power utilisation | 60% |
+| Sold power commitments | 140 MW |
+| Average sell-through | 108% |
 
-### 🔴 Critical Insights
+## Dashboards
 
-| Location | Load | Sales | Status |
-|----------|------|-------|--------|
-| Forge-2 / Hall-02 | 181% | 211% | ⚠️ Critical Overload |
-| Forge-2 / Hall-03 | 221% | 243% | ⚠️ Critical Overload |
-| Forge-2 / Hall-05 | 185% | 215% | ⚠️ Critical Overload |
-| Apex-3 / Hall-01 | 22% | 30% | 🟢 Underutilized |
-| Apex-4 / Hall-02 | 21% | 27% | 🟢 Underutilized |
+### 1. Power Consumption
 
----
-## 📬 Contact
+Interactive Plotly treemap of actual versus projected power capacity. Users can drill down from data centre to server hall and compare consumption ratios. Colour thresholds distinguish normal operation, attention, high load and overload.
 
-💼 [LinkedIn](https://linkedin.com/in/askorshunov)  
-💻 [GitHub](https://github.com/nevskoii)
+**[Open Power Consumption](https://nevskoii.github.io/monitoring_dashboards_dc/heatmap_consumption.html)**
 
+### 2. Colocation Sales Risk
 
+Interactive Plotly treemap of sold power commitments relative to available capacity. The view highlights capacity overselling, elevated sales exposure and underutilised facilities.
+
+**[Open Sales Risk](https://nevskoii.github.io/monitoring_dashboards_dc/heatmap_sales.html)**
+
+## Selected findings
+
+- Some facilities have hall-level consumption or sold commitments above nominal capacity, indicating locations for targeted review.
+- Other halls show low utilisation, highlighting potential commercial capacity for further analysis.
+- Treemap drill-down connects a network-wide view with individual hall indicators.
+
+These are observations from the demonstration dataset, not claims about a named employer's current infrastructure.
+
+## Implementation
+
+- **Python / Pandas:** data processing and preparation
+- **SQLite:** structured project dataset
+- **Plotly:** interactive hierarchical treemaps
+- **Jupyter Notebook:** reproducible dashboard generation
+- **GitHub Pages:** static hosting of exported interactive HTML
+
+## Repository contents
+
+| File | Purpose |
+|---|---|
+| [index.html](index.html) | Portfolio-ready project landing page |
+| [heatmap_consumption.html](heatmap_consumption.html) | Original interactive consumption treemap |
+| [heatmap_sales.html](heatmap_sales.html) | Original interactive sales treemap |
+| [Power_Monitoring_Dashboard.ipynb](Power_Monitoring_Dashboard.ipynb) | Python analysis and visualisation notebook |
+| [data/](data/) | Demonstration data and data notes |
+
+## Author
+
+Aleksandr Korshunov · [Professional portfolio](https://nevskoii.github.io/career-portfolio/) · [LinkedIn](https://www.linkedin.com/in/askorshunovv)
